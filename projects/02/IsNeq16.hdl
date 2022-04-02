@@ -1,0 +1,20 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/02/HalfAdder.hdl
+
+/**
+ * Computes the sum of two bits.
+ */
+
+CHIP IsNeq16 {
+    IN in[16];   
+    OUT out; 
+
+    PARTS:
+    // Put you code here:
+    Not(in = in[15], out = in15);
+    And(a = in[15], b = in15, out = l);
+    Or(a = in[15], b = in15, out = h);
+    Mux(a = l, b = h, sel = in[15], out = out);
+}

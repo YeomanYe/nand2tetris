@@ -1,0 +1,17 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/03/a/PC.hdl
+
+/**
+ * 
+ */
+
+CHIP MuxBit3Way16 {
+    IN a[16], b[16], c[16], d[16], sel[3];
+    OUT out[16];
+
+    PARTS:
+
+    Mux8Way16(a = d, b = a, c = b, d = a, e = c, f = a, g = b, h = a, sel = sel, out = out);
+}
